@@ -11,7 +11,7 @@ import ListView from "./ListView";
 const Dashboard = () => {
     const [taskListView, setTaskListView] = useState(true);
     const [isLoggingOut, setIsLoggingOut] = useState(false);
-    const [showTaskPopup, setShowTaskPopup] = useState(true);
+    const [showTaskPopup, setShowTaskPopup] = useState(false);
 
     const auth = getAuth(app);
     const navigate = useNavigate();

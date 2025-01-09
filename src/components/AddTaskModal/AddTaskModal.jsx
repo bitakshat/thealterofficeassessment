@@ -66,6 +66,8 @@ const AddTaskModal = ({ setShowTaskPopup }) => {
             }
             // setTaskData(values);
             // console.log(values);
+
+            setShowTaskPopup(false);
         }
     });
 
