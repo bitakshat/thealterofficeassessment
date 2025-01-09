@@ -236,7 +236,7 @@ const Task = ({ task, section, deleteTask, moveTask }) => {
                 <div
                     className={`w-[20%]  ${task.taskStatus === "Completed" ? "line-through text-gray-500" : ""}`}
                 >
-                    <span className="bg-gray-200 px-[10px] py-[5px]">{task.taskStatus}</span>
+                    <span className="bg-gray-200 px-[10px] py-[5px] rounded-[6px]">{task.taskStatus}</span>
                 </div>
                 <div
                     className={`w-[20%] ${task.taskStatus === "Completed" ? "line-through text-gray-500" : ""}`}

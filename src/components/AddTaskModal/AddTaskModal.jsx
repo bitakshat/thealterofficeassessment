@@ -4,12 +4,13 @@ import * as Yup from 'yup';
 import { db } from '../../firebase-config'; // Ensure you configure Firebase and export 'db'
 import { collection, addDoc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
+import closeicon from '../../assets/images/Close Icon.svg';
 
 
 const AddTaskModal = ({ setShowTaskPopup }) => {
 
-    const auth = getAuth(); // Get the authenticated user
-    const user = auth.currentUser; // Get the currently logged-in user
+    const auth = getAuth();
+    const user = auth.currentUser;
 
     const [taskData, setTaskData] = useState({})
 
@@ -17,10 +18,10 @@ const AddTaskModal = ({ setShowTaskPopup }) => {
         initialValues: {
             taskTitle: '',
             taskDescription: '',
-            taskCategory: '', // Added task category
-            dueDate: '', // Added due date
-            taskStatus: '', // Added task status
-            attachment: null, // Added attachment
+            taskCategory: '',
+            dueDate: '',
+            taskStatus: '',
+            attachment: null,
         },
         validationSchema: Yup.object({
             taskTitle: Yup.string()
@@ -75,7 +76,7 @@ const AddTaskModal = ({ setShowTaskPopup }) => {
         <div className="relative w-[674px] h-[696px] bg-white rounded-[20px] flex flex-col">
             <div className="w-full flex justify-between items-center p-[20px]">
                 <h1 className="text-[24px]">Create Task</h1>
-                <span>X</span>
+                <img src={closeicon} alt="close icon" className="cursor-pointer" onClick={() => setShowTaskPopup(false)} />
             </div>
             <hr className="!px-[0px]" />
             <div className='flex-1 flex flex-col overflow-hidden'>

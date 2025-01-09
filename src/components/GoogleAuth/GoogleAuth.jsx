@@ -16,6 +16,7 @@ const GoogleAuth = () => {
         try {
             const result = await signInWithPopup(auth, provider);
             const user = result.user;
+            const idToken = await user.getIdToken();
             // Store user data in context
             setUser({
                 name: user.displayName,
@@ -23,6 +24,7 @@ const GoogleAuth = () => {
             });
             navigate("/dashboard");
             console.log("User Info:", user);
+            document.cookie = `__vercel_live_token=${idToken}; path=/; SameSite=None; Secure`;
 
         } catch (error) {
             alert(`"Error during Google sign-in:", error.message ${error.message}`)
