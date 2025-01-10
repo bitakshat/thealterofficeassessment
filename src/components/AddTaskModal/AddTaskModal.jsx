@@ -234,8 +234,4 @@ const AddTaskModal = ({ setShowTaskPopup }) => {
     )
 }
 
-
-// company name - vareli technologies
-// hr name - mishel
-
 export default AddTaskModal
